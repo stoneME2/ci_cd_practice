@@ -8,6 +8,9 @@ jobs:
   verify-commit:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
       - name: Check commit message
         run: |
           MESSAGE=$(git log -1 --pretty=%B)
